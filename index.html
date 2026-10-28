@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Everydeck Mamelodi offers premium decking, cladding, artificial grass, and outdoor flooring solutions in Mamelodi, South Africa."
+    />
+    <title>Everydeck Mamelodi | Decking & Outdoor Living</title>
+    <style>
+      :root {
+        --bg: #f5f1eb;
+        --card: #ffffff;
+        --card-alt: #fff8f1;
+        --primary: #8b5a2b;
+        --primary-dark: #5d3719;
+        --accent: #d69c4d;
+        --text: #1d1d1d;
+        --muted: #5c5c5c;
+        --line: #e9dfd4;
+        --success: #1f7a53;
+        --shadow: 0 18px 40px rgba(34, 22, 12, 0.09);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        background: #111;
+        color: #fff;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        background: rgba(255,255,255,0.96);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 700;
+      }
+
+      .brand span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: white;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        background: linear-gradient(120deg, rgba(17,17,17,0.88), rgba(17,17,17,0.72)),
+          url('IMG-20261027-WA6115.jpg') center/cover no-repeat;
+        color: white;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 32px;
+        min-height: 620px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.25);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 4vw, 4.75rem);
+        line-height: 1.05;
+        margin: 0 0 18px;
+        letter-spacing: -0.05em;
+      }
+
+      .hero p {
+        margin: 0 0 22px;
+        font-size: 1.08rem;
+        color: rgba(255,255,255,0.82);
+        max-width: 620px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 26px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 1px solid rgba(255,255,255,0.35);
+      }
+
+      .mini-stats {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 26px;
+      }
+
+      .stat {
+        min-width: 150px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 4px;
+      }
+
+      .stat span {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.9rem;
+      }
+
+      .hero-card {
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card h3 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-size: 1.3rem;
+      }
+
+      .quote-box {
+        background: rgba(0,0,0,0.2);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 16px;
+        padding: 18px 18px 14px;
+      }
+
+      .quote-box strong {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 6px;
+        color: #f5d5a7;
+      }
+
+      .quote-box span {
+        display: block;
+        color: rgba(255,255,255,0.75);
+      }
+
+      .hero-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .hero-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgba(255,255,255,0.85);
+      }
+
+      .check {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.18);
+        display: grid;
+        place-items: center;
+        font-size: 0.8rem;
+        color: #ffe0a8;
+      }
+
+      section {
+        padding: 90px 0;
+      }
+
+      .section-head {
+        text-align: center;
+        max-width: 740px;
+        margin: 0 auto 42px;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .gallery-grid,
+      .testimonial-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .testimonial-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(139,90,43,0.12), rgba(214,156,77,0.2));
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3,
+      .pricing-card h3,
+      .testimonial-card h3,
+      .gallery-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+      }
+
+      .service-card p,
+      .pricing-card p,
+      .testimonial-card p,
+      .gallery-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .pricing-card {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .pricing-card.featured {
+        background: var(--card-alt);
+        border-color: rgba(139,90,43,0.4);
+        transform: translateY(-4px);
+      }
+
+      .label {
+        display: inline-block;
+        background: #f7e7d1;
+        color: var(--primary-dark);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      .price {
+        font-size: 2.4rem;
+        font-weight: 800;
+        margin: 16px 0;
+        letter-spacing: -0.04em;
+      }
+
+      .price small {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .pricing-card ul {
+        list-style: none;
+        margin: 20px 0 24px;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .pricing-card li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+      }
+
+      .pricing-card li::before {
+        content: "✓";
+        color: var(--success);
+        font-weight: 700;
+      }
+
+      .dark-band {
+        background: #111;
+        color: white;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .step {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 22px;
+        padding: 26px 20px;
+      }
+
+      .step-number {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .step h3 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+      }
+
+      .gallery-card {
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
+
+      .gallery-card .content {
+        padding: 20px 20px 22px;
+      }
+
+      .testimonial-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .stars {
+        color: #f0ad3d;
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 10px;
+      }
+
+      .customer {
+        margin-top: 18px;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .cta-section {
+        background: linear-gradient(120deg, #f6e7d2, #f0f5f7);
+      }
+
+      .cta-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 36px 28px;
+        background: rgba(255,255,255,0.52);
+        border: 1px solid rgba(139,90,43,0.18);
+        border-radius: 26px;
+      }
+
+      .cta-wrap h3 {
+        margin: 0 0 10px;
+        font-size: clamp(1.8rem, 2vw, 2.4rem);
+      }
+
+      .cta-wrap p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .footer {
+        background: #111;
+        color: rgba(255,255,255,0.7);
+        padding: 28px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .footer a {
+        color: #fff;
+      }
+
+      @media (max-width: 980px) {
+        .services-grid,
+        .pricing-grid,
+        .gallery-grid,
+        .testimonial-grid,
+        .process-grid,
+        .hero-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 52px 0;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .services-grid,
+        .pricing-grid,
+        .gallery-grid,
+        .testimonial-grid,
+        .process-grid,
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-wrap {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .brand {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">📍 Mamelodi West, East & Extensions | Same-day Quote</div>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Everydeck Mamelodi home">
+          <span class="brand-mark">E</span>
+          EVERY<span>DECK</span> MAMELODI
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#gallery">Projects</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="nav-cta" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A">WhatsApp</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <div class="eyebrow">Outdoor upgrades that last</div>
+            <h1>Beautiful yards from R299/m²</h1>
+            <p>
+              Premium decking, cladding, and outdoor flooring solutions designed for modern South African homes.
+              From neat budget upgrades to luxury composite finishes, Everydeck Mamelodi helps you transform your space.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A">Get a Free Quote</a>
+              <a class="btn btn-secondary" href="#pricing">View Prices</a>
+            </div>
+
+            <div class="mini-stats" aria-label="Key business stats">
+              <div class="stat">
+                <strong>R299</strong>
+                <span>Budget starting price</span>
+              </div>
+              <div class="stat">
+                <strong>1 Day</strong>
+                <span>Fast installation</span>
+              </div>
+              <div class="stat">
+                <strong>5★</strong>
+                <span>Quality finish</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Featured pricing card">
+            <h3>Most popular</h3>
+            <div class="quote-box">
+              <strong>R299 / m²</strong>
+              <span>Budget Pack Decking</span>
+            </div>
+
+            <ul class="hero-list">
+              <li><span class="check">✓</span> Pine pallet decking</li>
+              <li><span class="check">✓</span> 1-day installation</li>
+              <li><span class="check">✓</span> Ideal for braai areas</li>
+              <li><span class="check">✓</span> Affordable, durable finish</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head">
+            <h2>Our services</h2>
+            <p>We create outdoor spaces that are practical, stylish, and built for everyday living.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="card service-card">
+              <div class="service-icon">🪵</div>
+              <h3>Decking</h3>
+              <p>Custom deck installations for patios, braai areas, and family entertainment spaces.</p>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-icon">🏡</div>
+              <h3>Cladding</h3>
+              <p>Modern exterior finishes that add texture, warmth, and protection to your home.</p>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-icon">🌿</div>
+              <h3>Artificial Grass</h3>
+              <p>Low-maintenance, pet-friendly grass for tidy, green outdoor spaces all year round.</p>
+            </article>
+
+            <article class="card service-card">
+              <div class="service-icon">🧱</div>
+              <h3>Outdoor Floors</h3>
+              <p>Strong flooring solutions for outdoor areas that need durability and a premium look.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="container">
+          <div class="section-head">
+            <h2>Simple pricing packages</h2>
+            <p>Choose the right package for your yard, your lifestyle, and your budget.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <div class="label">Budget</div>
+              <h3>Budget Pack</h3>
+              <div class="price">R299 <small>/ m²</small></div>
+              <p>Pine pallet decking for affordable, attractive upgrades.</p>
+              <ul>
+                <li>Pine pallet decking</li>
+                <li>Fast installation</li>
+                <li>Perfect for braai areas</li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20the%20Budget%20Pack.%20Size%3A">Request Budget Quote</a>
+            </article>
+
+            <article class="pricing-card featured">
+              <div class="label">Popular</div>
+              <h3>Grass Pack</h3>
+              <div class="price">R350 <small>/ m²</small></div>
+              <p>Low-maintenance grass and clean modern styling for family yards.</p>
+              <ul>
+                <li>Artificial grass 25mm</li>
+                <li>No watering required</li>
+                <li>Safe for kids and pets</li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20the%20Grass%20Pack.%20Size%3A">Request Grass Quote</a>
+            </article>
+
+            <article class="pricing-card">
+              <div class="label">Premium</div>
+              <h3>Composite</h3>
+              <div class="price">R950 <small>/ m²</small></div>
+              <p>Luxury outdoor finishes with durability, style, and long-term value.</p>
+              <ul>
+                <li>25-year warranty</li>
+                <li>No rot or fading</li>
+                <li>Premium finishing</li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20the%20Premium%20Composite%20Package.%20Size%3A">Request Premium Quote</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark-band">
+        <div class="container">
+          <div class="section-head" style="color: white;">
+            <h2>How it works</h2>
+            <p style="color: rgba(255,255,255,0.7);">We keep the process simple and transparent from first call to final install.</p>
+          </div>
+
+          <div class="process-grid">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3>Tell us your size</h3>
+              <p>Send us your yard size and your preferred style.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3>Get a quote</h3>
+              <p>We recommend the best package for your space and budget.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3>Approve the plan</h3>
+              <p>We confirm the scope, materials, and installation timeline.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">4</div>
+              <h3>Install & enjoy</h3>
+              <p>Your outdoor upgrade is completed with quality workmanship.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="container">
+          <div class="section-head">
+            <h2>Recent work</h2>
+            <p>Examples of clean, modern outdoor spaces and dependable finishing work.</p>
+          </div>
+
+          <div class="gallery-grid">
+            <article class="gallery-card">
+              <img src="IMG-20261027-WA6115.jpg" alt="Completed outdoor deck project" />
+              <div class="content">
+                <h3>Modern decking</h3>
+                <p>Outdoor entertainment area with long-lasting finish and clean lines.</p>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="IMG-20261027-WA6913.jpg" alt="Outdoor flooring and cladding project" />
+              <div class="content">
+                <h3>Outdoor floor upgrades</h3>
+                <p>Stylish, practical surfaces for homes that need low-maintenance outdoor appeal.</p>
+              </div>
+            </article>
+
+            <article class="gallery-card">
+              <img src="IMG-20261027-WA6115.jpg" alt="Outdoor living installation" />
+              <div class="content">
+                <h3>Family-friendly finishing</h3>
+                <p>Durable flooring and outdoor styling designed for everyday use.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="container">
+          <div class="section-head">
+            <h2>Customer feedback</h2>
+            <p>Homeowners choose Everydeck Mamelodi for value, speed, and results they can trust.</p>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“The quality was excellent and the final finish looks very professional. My braai area feels brand new.”</p>
+              <div class="customer">— Sipho</div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“Fast response and a smooth process from quote to installation. We now have a much better outdoor area.”</p>
+              <div class="customer">— Naledi</div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>“Very affordable and the workmanship was neat. I would definitely recommend Everydeck Mamelodi.”</p>
+              <div class="customer">— Thabo</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta-section">
+        <div class="container">
+          <div class="cta-wrap">
+            <div>
+              <h3>Ready to upgrade your yard?</h3>
+              <p>Tell us the size of your space and we’ll help you choose the best solution.</p>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A">WhatsApp for Quote</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Everydeck Mamelodi</div>
+        <div>Serving Mamelodi West, East & Extensions</div>
+        <div><a href="https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A">WhatsApp: 079 645 1830</a></div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
