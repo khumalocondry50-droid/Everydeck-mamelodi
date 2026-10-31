@@ -29,7 +29,8 @@ http://localhost:8000
 ## WhatsApp quote link
 
 ```text
-https://wa.me/27796451830?text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A
+https://wa.me/0769451830
+text=Hi%20Everydeck%20Mamelodi%2C%20I%20need%20a%20quote%20for%20my%20yard.%20Size%3A
 ```
 
 ## Files in the repository
