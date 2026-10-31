@@ -9,7 +9,7 @@ Everydeck Mamelodi is a premium outdoor decking and flooring business serving Ma
 - Service overview
 - Customer reviews
 - Gallery section using project images in the repository
-- WhatsApp quote CTA connected to `079 645 1830`
+- WhatsApp quote CTA conne use it cted to `079 645 1830`
 - Mobile-friendly design
 
 ## Preview locally
